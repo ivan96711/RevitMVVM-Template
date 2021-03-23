@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command RevitMVVM</Text>
+    <Description>Some description for RevitMVVM</Description>
+    <Assembly>RevitMVVM.dll</Assembly>
+    <FullClassName>RevitMVVM.Command</FullClassName>
+    <ClientId>2d3e5fae-716f-4fea-9f45-32e4efd930a1</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application RevitMVVM</Name>
+    <Assembly>RevitMVVM.dll</Assembly>
+    <FullClassName>RevitMVVM.App</FullClassName>
+    <ClientId>0d050a4a-ca04-4836-a3e6-030fc8041c3b</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
