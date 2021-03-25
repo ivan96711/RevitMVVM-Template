@@ -30,7 +30,7 @@ namespace RevitMVVM
                 //Пользовательский элемент управления
                 FirstControlView firstControlView = new FirstControlView();
                 //ViewModel пользовательского элемента
-                FirstControlViewModel vm = new FirstControlViewModel();
+                FirstControlViewModel vm = new FirstControlViewModel(new RevitBridge(commandData.Application));
                 //Обработчик Revit для окна 
                 RevitHandler revitHandler = new RevitHandler();
 

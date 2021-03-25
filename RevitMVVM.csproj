@@ -67,7 +67,10 @@
     <Compile Include="MVVM\IViewModel.cs" />
     <Compile Include="MVVM\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevitAPI\APIClasses\Request.cs" />
+    <Compile Include="RevitAPI\APIClasses\RevitBridge.cs" />
     <Compile Include="RevitAPI\APIClasses\RevitHandler.cs" />
+    <Compile Include="RevitAPI\RevitViewController\WindowParameters.cs" />
     <Compile Include="RevitAPI\RevitViewController\WpfWindowController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +84,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RevitAPI\RevitViewController\WindowParameters.resx">
+      <DependentUpon>WindowParameters.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

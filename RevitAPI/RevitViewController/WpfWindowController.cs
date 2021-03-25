@@ -42,21 +42,25 @@ namespace RevitMVVM.RevitAPI.RevitViewController
         /// <param name="userControl">Пользовательский элемент управления для отображения в форме</param>
         /// <param name="viewModel">ViewModel пользовательского элемента управления, реализующий IViewModel</param>
         /// <param name="externalEventHandler">Класс, реализующий IExternalEventHandler, для внесения изменений в Revit</param>
-        public void ShowForm(UIApplication uiapp, UserControl userControl, IViewModel viewModel, IExternalEventHandler externalEventHandler)
+        public void ShowForm(UIApplication uiapp, UserControl userControl, IViewModel viewModel, IExternalEventHandler externalEventHandler, WindowParameters windowParameters = null)
         {
             // External Event for the dialog to use (to post requests)
             ExternalEvent exEvent = ExternalEvent.Create(externalEventHandler);
 
             viewModel.SetHandler(externalEventHandler, exEvent);
 
+            userControl.DataContext = viewModel;
             UserControl = userControl;
 
             Window.Content = userControl;
-            //Window.Title = Util.ApplicationWindowTitle;
-            //Window.Height = Util.ApplicationWindowHeight;
-            //Window.Topmost = Util.IsApplicationWindowTopMost;
-            //Window.Width = Util.ApplicationWindowWidth;
-            Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (windowParameters != null)
+            {
+                Window.Title = windowParameters.Title;
+                Window.Height = windowParameters.Height;
+                Window.Width = windowParameters.Width;
+                Window.Topmost = windowParameters.Topmost;
+                Window.WindowStartupLocation = windowParameters.WindowStartupLocation;
+            }
             Window.Show();
             
             Window.Closed += OnClosing;
