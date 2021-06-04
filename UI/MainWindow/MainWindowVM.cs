@@ -6,10 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RevitMVVM.MVVM
+namespace RevitMVVM.UI.MainWindow
 {
-    interface IViewModel
+    public class MainWindowVM
     {
-        void SetHandler(IExternalEventHandler revitHandler, ExternalEvent externalEvent);
+        public string Text { get; set; } = "Hello word";
+
+        public MainWindowVM()
+        {
+
+        }
     }
 }

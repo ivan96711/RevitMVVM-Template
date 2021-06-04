@@ -13,14 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RevitMVVM.MVVM.FirstControl
+namespace RevitMVVM.UI.MainWindow
 {
-    /// <summary>
-    /// Логика взаимодействия для FirstControlView.xaml
-    /// </summary>
-    public partial class FirstControlView : UserControl
+    public partial class MainWindowView : Window
     {
-        public FirstControlView()
+        public MainWindowView()
         {
             InitializeComponent();
         }

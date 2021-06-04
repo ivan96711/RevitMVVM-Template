@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace RevitMVVM.MVVM
+namespace RevitMVVM.UI
 {
     public class RelayCommand : ICommand
     {

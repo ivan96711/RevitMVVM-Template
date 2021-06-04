@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace RevitMVVM.MVVM
+namespace RevitMVVM.UI
 {
     public class BaseVM : INotifyPropertyChanged
     {

@@ -57,38 +57,28 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
-    <Compile Include="InternalException.cs" />
-    <Compile Include="MVVM\BaseVM.cs" />
-    <Compile Include="MVVM\DelegateCommand.cs" />
-    <Compile Include="MVVM\FirstControl\FirstControlView.xaml.cs">
-      <DependentUpon>FirstControlView.xaml</DependentUpon>
+    <Compile Include="UI\BaseVM.cs" />
+    <Compile Include="UI\DelegateCommand.cs" />
+    <Compile Include="UI\MainWindow\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\FirstControl\FirstControlViewModel.cs" />
-    <Compile Include="MVVM\IViewModel.cs" />
-    <Compile Include="MVVM\RelayCommand.cs" />
+    <Compile Include="UI\MainWindow\MainWindowVM.cs" />
+    <Compile Include="UI\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RevitAPI\APIClasses\Request.cs" />
     <Compile Include="RevitAPI\APIClasses\RevitBridge.cs" />
     <Compile Include="RevitAPI\APIClasses\RevitHandler.cs" />
-    <Compile Include="RevitAPI\RevitViewController\WindowParameters.cs" />
-    <Compile Include="RevitAPI\RevitViewController\WpfWindowController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RevitMVVM.addin" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MVVM\FirstControl\FirstControlView.xaml">
+    <Page Include="UI\MainWindow\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\Model\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="RevitAPI\RevitViewController\WindowParameters.resx">
-      <DependentUpon>WindowParameters.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="UI\Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

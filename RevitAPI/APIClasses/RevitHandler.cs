@@ -15,11 +15,6 @@ namespace RevitMVVM.RevitAPI.APIClasses
     [Transaction(TransactionMode.Manual)]
     public class RevitHandler : IExternalEventHandler
     {
-        private Request request = new Request();
-        public Request Request
-        {
-            get { return request; }
-        }
         public void Execute(UIApplication uiapp)
         {
             UIDocument uidoc = uiapp.ActiveUIDocument;
@@ -29,8 +24,6 @@ namespace RevitMVVM.RevitAPI.APIClasses
             try
             {
                 //Здесь должен быть код для взаимодействия с Revit
-                
-
             }
             catch (Exception exception)
             {

@@ -4,9 +4,8 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
-using RevitMVVM.MVVM.FirstControl;
+using RevitMVVM.UI.MainWindow;
 using RevitMVVM.RevitAPI.APIClasses;
-using RevitMVVM.RevitAPI.RevitViewController;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,8 +17,6 @@ namespace RevitMVVM
     [Transaction(TransactionMode.Manual)]
     public class Command : IExternalCommand
     {
-        private WpfWindowController _wpfWindowController = new WpfWindowController();
-
         public Result Execute(
           ExternalCommandData commandData,
           ref string message,
@@ -27,14 +24,15 @@ namespace RevitMVVM
         {
             try
             {
-                //Пользовательский элемент управления
-                FirstControlView firstControlView = new FirstControlView();
-                //ViewModel пользовательского элемента
-                FirstControlViewModel vm = new FirstControlViewModel(new RevitBridge(commandData.Application));
-                //Обработчик Revit для окна 
-                RevitHandler revitHandler = new RevitHandler();
+                RevitBridge revitBridge = new RevitBridge(commandData.Application);
 
-                _wpfWindowController.ShowForm(commandData.Application, firstControlView, vm, revitHandler);
+                RevitHandler revitHandler = new RevitHandler();
+                ExternalEvent exEvent = ExternalEvent.Create(revitHandler);
+
+                MainWindowView firstControlView = new MainWindowView();
+                MainWindowVM vm = new MainWindowVM();
+                firstControlView.ShowDialog();
+
 
                 return Result.Succeeded;
             }
